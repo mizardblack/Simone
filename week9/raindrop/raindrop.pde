@@ -3,7 +3,7 @@
 Drop[] drops = new Drop[100]; // array of drop objects
 
 void setup() {
-  size(640, 360); 
+  size(1024, 768); 
   for (int i = 0; i < drops.length; i++) {
     drops[i] = new Drop();
   }
