@@ -1,1 +1,3 @@
-# My test git repo
+# Code 1
+
+Assignments for Code 1.
