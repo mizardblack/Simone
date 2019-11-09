@@ -53,7 +53,7 @@ class Drop {
 
   // render drop
   void show() { // function to render the drop onto the screen
-    float thick = map(z, 0, 20, 1, 3); //if z is near , drop is more thicker 
+    float thick = map(z, 0, 20, 5,20); //if z is near , drop is more thicker 
     strokeWeight(thick); // weight of the drop
     stroke(138, 43, 226); // purple color
     line(x, y, x, y+len); // draws the line with two points
