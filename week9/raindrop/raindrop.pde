@@ -1,10 +1,10 @@
 // reference from Daniel Shiffman http://codingtra.in http://patreon.com/codingtrain
 
 import processing.sound.*;
-Drop[] drops = new Drop[100]; // array of drop objects
+Drop[] drops = new Drop[50]; // array of drop objects
 
 void setup() {
-  size(1024, 768); 
+  size(1024, 668); 
   for (int i = 0; i < drops.length; i++) {
     drops[i] = new Drop(this);
   }
@@ -40,17 +40,11 @@ class Drop {
     y = y + yspeed; // increment y position to give the effect of falling 
     float grav = map(z, 0, 20, 0, 0.2); // if z is near then gravity on drop is more
     yspeed = yspeed + grav; // speed increases as gravity acts on the drop
-    if (y==10) {
-      float soundFreq = map(x, 0, width, 2.0, 0.2);
-      float soundAmp = map(z, 0, 20, 0.1, 0.6);
-      playSound(soundFreq, soundAmp);
-      println("x=",x);
-    }
+    
     if (y > height) { // repositions the drop after it has 'disappeared' from screen
-    float soundFreq = map(x, 0, width, 2.0, 0.2);
-      float soundAmp = map(z, 0, 20, 0.1, 0.6);
+      float soundFreq = map(len, 10, 20, 2.0, 0.1);
+      float soundAmp = map(z, 0, 20, 0.1, 5.0);
       playSound(soundFreq, soundAmp);
-      println("x=",x);
       y = random(-200, -100);
       yspeed = map(z, 0, 20, 4, 10);
       println("rain rerender");
